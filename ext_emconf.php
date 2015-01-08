@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Collection of static functions and peer to access tx_lib. Auto including and loading of objects. NG typo3.teams.extension-coordination.',
 	'category' => 'misc',
 	'shy' => 0,
-	'version' => '0.2.0',
+	'version' => '0.3.0',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -34,8 +34,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '4.5.0-6.1.99',
-			'php' => '5.0.0-5.3.99',
+			'typo3' => '6.0.0-6.2.99',
+			'php' => '5.3.0-5.6.99',
 		),
 		'conflicts' => array(
 		),
