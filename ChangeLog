@@ -1,3 +1,8 @@
+08-01-15 Andre Spindler <git@andre-spindler.de>
+
+	* version 0.1.1
+	* set constraints for TYPO3 version and PHP version
+
 30-11-05 Elmar Hinz  <elmar.hinz@team-red.net>
 
 	* Setting it to version 0.1.0 in sync with 0.1.0 of lib.
