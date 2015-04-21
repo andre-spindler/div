@@ -258,8 +258,7 @@ class TxDiv {
 	 */
 	public static function loadClass($classNameOrPathInformation) {
 		GeneralUtility::logDeprecatedFunction();
-		require_once(ExtensionManagementUtility::extPath('lib') . 'class.tx_lib_t3Loader.php');
-		if (tx_lib_t3Loader::load($classNameOrPathInformation)) {
+		if (\Spin\Lib\T3Loader::load($classNameOrPathInformation)) {
 			return true;
 		}
 //		print '<p>Trying Pear Loader: ' . $classNameOrPathInformation;
@@ -313,8 +312,7 @@ class TxDiv {
 		GeneralUtility::logDeprecatedFunction();
 		$instance = false;
 		if (!is_object($instance)) {
-			require_once(ExtensionManagementUtility::extPath('lib') . 'class.tx_lib_t3Loader.php');
-			$instance = tx_lib_t3Loader::makeInstance($className);
+			$instance = \Spin\Lib\T3Loader::makeInstance($className);
 		}
 //		if(!is_object($instance)) {
 //			require_once(t3lib_extMgm::extPath('lib') . 'class.tx_lib_pearLoader.php');
@@ -346,8 +344,7 @@ class TxDiv {
 		GeneralUtility::logDeprecatedFunction();
 		$outputName = false;
 		if (!$outputName) {
-			require_once(ExtensionManagementUtility::extPath('lib') . 'class.tx_lib_t3Loader.php');
-			$outputName = tx_lib_t3Loader::makeInstanceClassName($inputName);
+			$outputName = \Spin\Lib\T3Loader::makeInstanceClassName($inputName);
 		}
 //		if(!$outputName) {
 //			require_once(t3lib_extMgm::extPath('lib') . 'class.tx_lib_pearLoader.php');
@@ -476,7 +473,8 @@ class TxDiv {
 	 * @return  object      an hashObject
 	 */
 	public static function toHashObject($mixed, $splitCharacters = ',;:') {
-		return new tx_lib_object(self::toHashArray($mixed, $splitCharacters));
+		//return new tx_lib_object(self::toHashArray($mixed, $splitCharacters));
+        return GeneralUtility::makeInstance('\\Spin\\Lib\\Object', self::toHashArray($mixed, $splitCharacters));
 	}
 
 
@@ -555,7 +553,8 @@ class TxDiv {
 	 * @return  object      a listObject
 	 */
 	public static function toListObject($mixed, $splitCharacters = ',;:') {
-		return new tx_lib_object(self::toListArray($mixed, $splitCharacters));
+		//return new tx_lib_object(self::toListArray($mixed, $splitCharacters));
+        return GeneralUtility::makeInstance('\\Spin\\Lib\\Object', self::toListArray($mixed, $splitCharacters));
 	}
 
 
@@ -638,5 +637,3 @@ class TxDiv {
 
 
 }
-
-?>
