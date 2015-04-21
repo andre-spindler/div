@@ -1,5 +1,10 @@
 08-01-15 Andre Spindler <git@andre-spindler.de>
 
+	* modified call of t3loader
+	* fixed some class initializations
+
+08-01-15 Andre Spindler <git@andre-spindler.de>
+
 	* version 0.3.0
 	* compatibility for TYPO3 6.2
 	* introduce namespaces and rewrite classes
